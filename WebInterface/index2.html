@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unsorted LED</title>
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>unsorted LED Control</h1>
+
+        <div class="button-group">
+            <button id="connectBleButton">Connect</button>
+            <button id="disconnectBleButton">Disconnect</button>
+        </div>
+        
+        <div id="bleState" class="status" style="color:#ff1100;">
+            Disconnected
+        </div>
+
+        <div class="slots">
+            <div class="slot-row">
+                <span class="slot-label">AV1</span>
+                <input class="slot-input" type="text" id="av1Artist1" placeholder="Artist 1">
+                <input class="slot-input" type="text" id="av1Artist2" placeholder="Artist 2">
+                <button class="play-button" type="button" data-slot="AV1" data-input-a="av1Artist1" data-input-b="av1Artist2">Play</button>
+            </div>
+            <div class="slot-row">
+                <span class="slot-label">AV2</span>
+                <input class="slot-input" type="text" id="av2Artist1" placeholder="Artist 1">
+                <input class="slot-input" type="text" id="av2Artist2" placeholder="Artist 2">
+                <button class="play-button" type="button" data-slot="AV2" data-input-a="av2Artist1" data-input-b="av2Artist2">Play</button>
+            </div>
+            <div class="slot-row">
+                <span class="slot-label">AV3</span>
+                <input class="slot-input" type="text" id="av3Artist1" placeholder="Artist 1">
+                <input class="slot-input" type="text" id="av3Artist2" placeholder="Artist 2">
+                <button class="play-button" type="button" data-slot="AV3" data-input-a="av3Artist1" data-input-b="av3Artist2">Play</button>
+            </div>
+            <div class="slot-row">
+                <span class="slot-label">AV4</span>
+                <input class="slot-input" type="text" id="av4Artist1" placeholder="Artist 1">
+                <input class="slot-input" type="text" id="av4Artist2" placeholder="Artist 2">
+                <button class="play-button" type="button" data-slot="AV4" data-input-a="av4Artist1" data-input-b="av4Artist2">Play</button>
+            </div>
+
+            <div class="slot-row">
+                <span class="slot-label">BREAK</span>
+                <span class="slot-spacer" aria-hidden="true"></span>
+                <input class="slot-input" type="text" id="break" value="BREAK">
+                <button class="play-button" type="button" data-slot="BREAK" data-input-b="break">Play</button>
+            </div>
+
+            <div class="slot-row slot-row-no-input">
+                <span class="slot-label">SEND LOVE</span>
+                <button class="play-button" type="button" data-slot="SEND_LOVE" data-special="love">Play</button>
+            </div>
+            </div>
+
+        <div class="settings-panel">
+            <h2>Display settings</h2>
+            <div class="setting-row">
+                <label for="scrollSpeed">Scroll speed (0-30)</label>
+                <input type="number" id="scrollSpeed" min="0" max="30" value="10">
+            </div>
+            <div class="setting-row">
+                <span>Font color</span>
+                <div class="color-presets" role="group" aria-label="Font color presets">
+                    <button class="color-swatch" type="button" data-color="#FFFFFF" aria-label="White"></button>
+                    <button class="color-swatch color-active" type="button" data-color="#FF0000" aria-label="Red"></button>
+                    <button class="color-swatch" type="button" data-color="#00FF00" aria-label="Green"></button>
+                    <button class="color-swatch" type="button" data-color="#0000FF" aria-label="Blue"></button>
+                    <button class="color-swatch" type="button" data-color="#ba3bff" aria-label="Purple"></button>
+                </div>
+            </div>
+            <div class="setting-row">
+            <button id="clearAllButton" type="button">Clear all</button>
+        </div>
+        </div>
+
+        <div id="timestampContainer" class="timestamp">
+            Data sent: <span id="timestamp"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
